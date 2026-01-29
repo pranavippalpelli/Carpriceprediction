@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Price Prediction</title>
+</head>
+<body>
+    <h1>Car Price Predictor</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if price %}
+        <h2>Estimated Price: ₹ {{ price|floatformat:2 }}</h2>
+    {% endif %}
+</body>
+</html>
